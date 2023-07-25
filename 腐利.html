@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<html>
+
+<head>
+
+  <title>音乐播放器</title>
+
+  <style>
+
+    .player-button {
+
+      font-size: 10px;
+
+      padding: 10px 20px;
+
+      margin-right: 10px;
+
+    }
+
+    .button-container {
+
+      margin-top: 20px;
+
+    }
+
+    .image-container {
+
+      width: 300px;
+
+      height: 300px;
+
+      position: relative;
+
+      margin: 20px auto;
+
+    }
+
+    #image {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      opacity: 1; /* 初始透明度为 1 */
+
+    }
+
+    .slider-container {
+
+      width: 200px;
+
+      margin-top: 10px;
+
+    }
+
+    .slider-label {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-bottom: 5px;
+
+    }
+
+    .slider-value {
+
+      font-size: 14px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <audio id="music" src="http://wx.music.tc.qq.com/C400004CGU9O0GidGz.m4a?guid=2000000280&vkey=9C76FDDDEEEF36C707710F3DC01C767B049324D262BDDAF791BA4F3B40997D35452F1CBCAB1348E6709F4BEFE4EC9C408F2260C5CB860232&uin=0&fromtag=30280" type="audio/mpeg"></audio>
+
+  <div class="button-container">
+
+    <button class="player-button" onclick="playMusic()">等你下课</button>
+
+    <button class="player-button" onclick="pauseMusic()">暂停</button>
+
+    <button class="player-button" onclick="stopMusic()">停止</button>
+
+  </div>
+
+  <div class="image-container">
+
+    <img id="image" src="http://wx.y.gtimg.cn/music/photo_new/T002R500x500M000003bSL0v4bpKAx_1.jpg" alt="加载图片" />
+
+  </div>
+
+  <div class="slider-container">
+
+    <div class="slider-label">
+
+      <span>透明度:</span>
+
+      <span id="opacity-value" class="slider-value">1</span>
+
+    </div>
+
+    <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="1" oninput="changeOpacity(this.value)" />
+
+  </div>
+
+  <script>
+
+    var music = document.getElementById("music");
+
+    var image = document.getElementById("image");
+
+    var opacityValue = document.getElementById("opacity-value");
+
+    function playMusic() {
+
+      music.play();
+
+    }
+
+    function pauseMusic() {
+
+      music.pause();
+
+    }
+
+    function stopMusic() {
+
+      music.pause();
+
+      music.currentTime = 0;
+
+    }
+
+    function changeOpacity(value) {
+
+      image.style.opacity = value;
+
+      opacityValue.textContent = value;
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+
+<script>
+
+	setWindowDrag(200, 0, 350, 350);
+
+	</script>
+
+  
