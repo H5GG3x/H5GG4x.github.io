@@ -178,10 +178,10 @@ h5gg.editAll('6', 'F32');
 
     tkpd = 'I32'
 
-    h5gg.searchNumber('257', 'U64', '0x0', '0x999999999');
+    h5gg.searchNumber('257', 'U64', '0x0', '0x160000000');
     h5gg.searchNearby('16842753', 'I32', '0x100');
     h5gg.searchNearby('4575657222473777152', 'I32', '0x100');
-    h5gg.searchNumber('257', 'U64', '0x0', '0x999999999');
+    h5gg.searchNumber('257', 'U64', '0x0', '0x160000000');
     airjumpCount = h5gg.getResultsCount();
     airjumpResults = h5gg.getResults(airjumpCount);
     h5gg.clearResults();
@@ -234,7 +234,7 @@ h5gg.searchNearby('0.1', 'F32', '0x10');
 h5gg.searchNumber("0.1","F32", "0x0","0x9999999999");
 intervalId = setInterval(function(){      
 h5gg.editAll(num1,"F32");
- }, 100);
+ }, 5000);
 alert('成功')
 }
 
