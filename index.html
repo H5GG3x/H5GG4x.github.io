@@ -238,7 +238,7 @@ var count = h5gg.getResultsCount();
 var results = h5gg.getResults(count);
 var intervalId = setInterval(function(){   
 for(var i=0; i<count; i++) {
-h5gg.setValue(results[i].address, "257", "U64");
+h5gg.setValue(results[i].address, num1, "F32");
 }
 },
 500
