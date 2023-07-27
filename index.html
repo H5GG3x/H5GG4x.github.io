@@ -251,19 +251,25 @@ alert('成功') ;
  function starck12(){
 clearInterval(intervalId);
  }
+
+//starck12();
+
 function starck12(){
 h5gg.clearResults();
 var num1 = prompt("输入你要还原的速度");
 h5gg.searchNumber("9187343235540844544","U64", "0x0","0x9999999999");
 h5gg.searchNearby(num1, 'F32', '0x16');
 h5gg.searchNumber(num1,"F32", "0x0","0x9999999999");
-h5gg.editAll("0.1","F32");
-h5gg.clearResults();
+var count = h5gg.getResultsCount();
+var results = h5gg.getResults(count);   
+for(var i=0; i<count; i++) {
+h5gg.setValue(results[i].address, num1, "F32");
 alert('还原成功') ;
+}
 }
  
       
-//starck12();
+
 
 
 var intervalId;
