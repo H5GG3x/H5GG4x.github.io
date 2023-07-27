@@ -225,7 +225,7 @@ h5gg.editAll('6', 'F32');
 tk_zt = '1'//开启踏空下面的是关闭（设置的变量）
 //tk_zt = '0'
 }
-    var intervalId;
+
     function starck4() {
       h5gg.clearResults();   
 var num1 = prompt("请输入一个速度 hyt建议0.1-0.24以内");
@@ -234,13 +234,15 @@ h5gg.searchNearby('4453159314542034943', 'U64', '0x16');
 h5gg.searchNumber("9187343235540844544","U64", "0x0","0x9999999999");
 h5gg.searchNearby('0.1', 'F32', '0x16');
 h5gg.searchNumber("0.1","F32", "0x0","0x9999999999");
-var count = h5gg.getResultsCount(); //获取搜索到的数据总量
-var r = h5gg.getResults(count); //储存数据地址
-intervalId = setInterval(function(){      
-h5gg.setValue(r, 257, "U64");
- }, 500);
-alert('成功')
+var count = h5gg.getResultsCount();
+var results = h5gg.getResults(count);
+var intervalId = setInterval(function(){   
+for(var i=0; i<count; i++) {
+h5gg.setValue(results[i].address, "257", "U64");
 }
+},
+500
+)
 
 //starck4();
 
