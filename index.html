@@ -230,11 +230,10 @@ tk_zt = '1'//开启踏空下面的是关闭（设置的变量）
     function starck4() {
       h5gg.clearResults();   
 var num1 = prompt("请输入一个速度 hyt建议0.1-0.24以内");
-h5gg.searchNumber('9187343235540844544', 'U64', '0x0', '0x9999999999');
-h5gg.searchNearby('4453159314542034943', 'U64', '0x16');
-h5gg.searchNumber("9187343235540844544","U64", "0x0","0x9999999999");
-h5gg.searchNearby('0.1', 'F32', '0x16');
-h5gg.searchNumber("0.1","F32", "0x0","0x9999999999");
+h5gg.searchNumber('1036831949', 'I64', '0x0', '0x999999999');
+h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
+h5gg.searchNearby('0.1', 'F32', '0x4');
+h5gg.searchNumber("0.1","F32", "0x0","0x999999999");
 var count = h5gg.getResultsCount();
 var results = h5gg.getResults(count);
 var inter = setInterval(function(){   
@@ -242,36 +241,29 @@ for(var i=0; i<count; i++) {
 h5gg.setValue(results[i].address, num1, "F32");
 }
 },
-100
+5
 );
-alert('成功') ;
+alert('成功');
 }
 
 //starck4();
 
  function starck12(){
-clearInterval(inter);
- }
-
-//starck12();
-
-function starck12(){
-var num1 = prompt("输入你要还原的速度");
-h5gg.searchNumber("9187343235540844544","U64", "0x0","0x9999999999");
-h5gg.searchNearby(num1, 'F32', '0x100');
-h5gg.searchNumber(num1,"F32", "0x0","0x9999999999");
+clearInterval(inter); {
+var num2 = prompt("请输入你要还原的速度");
+h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
+h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
+h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
 var count = h5gg.getResultsCount();
-var results = h5gg.getResults(count);   
+var results = h5gg.getResults(count);
 for(var i=0; i<count; i++) {
-h5gg.setValue(results[i].address, num1, "F32");
-alert('还原成功') ;
-}
-}
-
-
- 
-      
-
+h5gg.setValue(results[i].address, 0.1, "F32");
+alert('还原成功');
+ }
+ }
+ }
+     
+//starck12();
 
 
 var intervalId;
