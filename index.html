@@ -226,7 +226,7 @@ tk_zt = '1'//开启踏空下面的是关闭（设置的变量）
 //tk_zt = '0'
     }
       
-    
+    var inter = null;
     function starck4() {
       h5gg.clearResults();   
 var num1 = prompt("请输入一个速度 hyt建议0.1-0.24以内");
@@ -248,6 +248,7 @@ alert('成功');
 
 
  function starck12(){
+clearInterval(inter); // 停止之前的 interval
 var num2 = prompt("请输入你要还原的速度");
 h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
 h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
