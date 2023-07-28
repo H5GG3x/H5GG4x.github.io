@@ -227,27 +227,26 @@ tk_zt = '1'//开启踏空下面的是关闭（设置的变量）
     }
       
     var inter = null;
-    function starck4() {
-      h5gg.clearResults();   
+ function starck4() {
+h5gg.clearResults();   
 var num1 = prompt("请输入一个速度 hyt建议0.1-0.24以内");
 h5gg.searchNumber('1036831949', 'I64', '0x0', '0x999999999');
 h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
 h5gg.searchNearby('0.1', 'F32', '0x4');
-h5gg.searchNumber("0.1","F32", "0x0","0x999999999");
+h5gg.searchNumber("0.1", "F32", "0x0", "0x999999999");
 var count = h5gg.getResultsCount();
 var results = h5gg.getResults(count);
-setInterval(function(){   
-for(var i=0; i<count; i++) {
-h5gg.setValue(results[i].address, num1, "F32");
+inter = setInterval(function(){   
+for(var i = 0; i < count; i++) {
+  h5gg.setValue(results[i].address, num1, "F32");
 }
-},
-5
-);
-alert('成功');
-}
+},10);
+console.log('定时器已开启, id 是: ' + inter);
+ }
 
 
  function starck12(){
+console.log('正在尝试停止定时器, id 是: ' + inter); 
 clearInterval(inter); // 停止之前的 interval
 var num2 = prompt("请输入你要还原的速度");
 h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
@@ -255,10 +254,10 @@ h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
 h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
 var count = h5gg.getResultsCount();
 var results = h5gg.getResults(count);
-for(var i=0; i<count; i++) {
-h5gg.setValue(results[i].address, 0.1, "F32");
-alert('还原成功');
- }
+for(var i = 0; i < count; i++) {
+  h5gg.setValue(results[i].address, 0.1, "F32");
+}
+console.log('已经尝试停止定时器, id 是: ' + inter);
  }
  
 
