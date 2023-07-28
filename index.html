@@ -236,7 +236,7 @@ h5gg.searchNearby('0.1', 'F32', '0x4');
 h5gg.searchNumber("0.1","F32", "0x0","0x999999999");
 var count = h5gg.getResultsCount();
 var results = h5gg.getResults(count);
-var imter = setInterval(function(){   
+setInterval(function(){   
 for(var i=0; i<count; i++) {
 h5gg.setValue(results[i].address, num1, "F32");
 }
@@ -248,8 +248,6 @@ alert('成功');
 
 
  function starck12(){
-clearInterval(imter); {
-}
 var num2 = prompt("请输入你要还原的速度");
 h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
 h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
