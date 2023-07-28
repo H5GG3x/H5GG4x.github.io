@@ -242,6 +242,7 @@ for(var i = 0; i < count; i++) {
 }
 },10);
 console.log('定时器已开启, id 是: ' + inter);
+alert('成功');
  }
 
 
@@ -258,6 +259,7 @@ for(var i = 0; i < count; i++) {
   h5gg.setValue(results[i].address, 0.1, "F32");
 }
 console.log('已经尝试停止定时器, id 是: ' + inter);
+alert('还原成功');
  }
  
 
@@ -318,10 +320,9 @@ function starck7(){
 function starck9() {
     h5gg.clearResults();
 var num1 = prompt("请输入一个高度 建议1-5以内");
-h5gg.searchNumber('0.1', 'F32', '0x0', '0x9999999999');
-h5gg.searchNearby('181', 'F32', '0x100');
-h5gg.searchNumber("181","F32", "0x0","0x9999999999");
-h5gg.searchNearby('0.42', 'F32', '0x88');
+h5gg.searchNumber('0.42', 'F32', '0x0', '0x9999999999');
+h5gg.searchNearby('181', 'F32', '0x88');
+h5gg.searchNearby('0.1', 'F32', '0x116');
 h5gg.searchNumber('0.42', 'F32', '0x0', '0x9999999999');
 h5gg.editAll(num1,"F32");
 alert('成功');
@@ -331,21 +332,12 @@ alert('成功');
 
 function starck10() {
  h5gg.clearResults();   
-
-var num1 = prompt("请输入你现在的高度");
-
-h5gg.searchNumber('0.1', 'F32', '0x0', '0x9999999999');
-
-h5gg.searchNearby('181', 'F32', '0x100');
-
-h5gg.searchNumber("181","F32", "0x0","0x9999999999");
-
-h5gg.searchNearby(num1, 'F32', '0x88');
-
-h5gg.searchNumber(num1, 'F32', '0x0', '0x9999999999');
-
-h5gg.editAll("0.42","F32");
-
+var num2 = prompt("请输入你现在的高度");
+h5gg.searchNumber(num2, 'F32', '0x0', '0x9999999999');
+h5gg.searchNearby('181', 'F32', '0x88');
+h5gg.searchNearby('0.1', 'F32', '0x116');
+h5gg.searchNumber(num2, 'F32', '0x0', '0x9999999999');
+h5gg.editAll('0.42',"F32");
 alert('还原成功');
 }
     
