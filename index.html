@@ -340,7 +340,49 @@ h5gg.searchNumber(num2, 'F32', '0x0', '0x9999999999');
 h5gg.editAll('0.42',"F32");
 alert('还原成功');
 }
-    
+
+
+function starck13() {
+h5gg.clearResults();
+        h5gg.searchNumber('0.6', 'F32', '0x000000000', '0x200000000');
+    h5gg.searchNearby('1.8', 'F32', '0x48');
+    h5gg.searchNumber('0.6', 'F32', '0x000000000', '0x200000000');
+    h5gg.editAll('0.54',"F32");
+  h5gg.clearResults();
+  
+  setInterval(function()
+  {
+    h5gg.searchNumber('1.8', 'F32', '0x000000000', '0x200000000');
+        var count = h5gg.getResultsCount();
+        var r = h5gg.getResults(count);
+        var cnt = 0;
+        for(var i=0; i<count; i++) {
+            var addr1 = r[i].address;       
+            
+
+var dizhi1 = (Number(addr1) + -4);
+var shuzhi1 = h5gg.getValue(dizhi1, "F32");
+ var shuzhi2 = h5gg.getValue((Number(addr1) + 140), "F32");
+  var shuzhi3 = h5gg.getValue((Number(addr1) + 152), "F32");
+  var shuzhi4 = h5gg.getValue((Number(addr1) + 168), "F32");
+
+if(
+shuzhi1 == 0.6  &&
+shuzhi2 == 1 &&
+shuzhi3 ==0.6 &&
+shuzhi4 ==0.4
+) 
+{
+h5gg.setValue(dizhi1,6, "F32");
+
+           
+           }
+           h5gg.clearResults();
+      }
+},300)
+alert("开启成功");
+}
+
 
        
 </script>
@@ -360,6 +402,7 @@ alert('还原成功');
 <button onclick="starck7()"style="color:Red">杀戮关闭</button>
 <button onclick="starck9()"style="color:Red">自定义高跳</button>
 <button onclick="starck10()"style="color:Red">还原高跳</button>
+<button onclick="starck13()"style="color:Red">循环碰撞箱</button>
 <div id="info-text">麻绳专挑细处断 厄运专挑苦命人
 </div>
 </div>
