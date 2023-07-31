@@ -1,0 +1,48 @@
+<script>
+var allowedIPs = ['223.104.64.27', '填入允许访问的ip2'];
+var usernames = ['奖励哥', '输入设定的账户名2'];
+var passwords = ['输入设定的密码1', '输入设定的密码2'];
+var attempts = 0;
+var csrfToken;
+
+async function getIP() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://api.ipify.org?format=json', true);
+  xhr.send();
+  return new Promise((resolve, reject) => {
+    xhr.onload = function () {
+      var response = JSON.parse(xhr.responseText);
+      resolve(response.ip);
+    }
+    xhr.onerror = function () {
+      reject('Error occurred while getting IP');
+    }
+  });
+}
+
+function getCsrfToken() {
+  // 这个函数应该向服务器请求一个新的CSRF令牌，并将其设置为csrfToken变量的值
+  // 这需要服务器端的支持
+}
+
+async function checkLogin() {
+  var userInput = document.getElementById("username").value;
+  var passInput = document.getElementById("password").value;
+  var csrfTokenInput = document.getElementById("csrfToken").value;
+  attempts++;
+  var userIP = await getIP();
+  if (usernames.includes(userInput) && passwords.includes(passInput) && allowedIPs.includes(userIP)) {
+    alert('登录成功！');
+    redirectToMainPage();
+  } else {
+    alert('登录失败, 请重新输入.');
+  }
+}
+
+function redirectToMainPage() {
+  // 这里将URL替换为您的主页面URL
+  window.location.href = "http://example.com/main.html";
+}
+
+getCsrfToken();
+</script>
