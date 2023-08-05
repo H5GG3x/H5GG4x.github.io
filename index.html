@@ -179,9 +179,8 @@ h5gg.editAll('6', 'F32');
 
     tkpd = 'U64'
 
-    h5gg.searchNumber('257', 'U64', '0x0', '0x999999999');
+   h5gg.searchNumber('257', 'U64', '0x0', '0x999999999');
     h5gg.searchNearby('4474776594666015949', 'U64', '0x250');
-    h5gg.searchNearby('4575657222456999936', 'U64', '0x30');
     h5gg.searchNumber('257', 'U64', '0x0', '0x999999999');
     airjumpCount = h5gg.getResultsCount();
     airjumpResults = h5gg.getResults(airjumpCount);
@@ -198,29 +197,18 @@ h5gg.editAll('6', 'F32');
         tkpd = 'I16'
         alert('否')
 
-        h5gg.clearResults();
+       h5gg.clearResults();
         h5gg.searchNumber('257', 'I16', '0x0', '0x999999999');
-        h5gg.searchNearby('9387', 'I16', '0x92');
-        h5gg.searchNearby('23677', 'I16', '0x208');
+        h5gg.searchNearby('23677', 'I16', '0x92');
+        h5gg.searchNearby('-9141', 'I16', '0x684');
         h5gg.searchNumber('257', 'I16', '0x0', '0x999999999');
         airjumpCount = h5gg.getResultsCount();
         airjumpResults = h5gg.getResults(airjumpCount);
 
-        var tk;
         var count = h5gg.getResultsCount();
         var r = h5gg.getResults(count);
-        if (r.length > 0 && isValidAddress(r[0].address)) {
         tk = r[0].address;
-        } else {
 
-        function isValidAddress(address) {
-    // 检查地址是否有效的逻辑
-    // 例如，如果地址应该是一个非空字符串，您可以这样检查：
-    return typeof address === 'string' && address !== '';
-        }
-        
-
-    }
     }
     tk_zt = '0'//设置变量
 
@@ -237,6 +225,7 @@ h5gg.editAll('6', 'F32');
 tk_zt = '1'//开启踏空下面的是关闭（设置的变量）
 //tk_zt = '0'
     }
+
       
     var inter = null;
  function starck4() {
