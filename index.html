@@ -206,9 +206,9 @@ h5gg.editAll('6', 'F32');
         airjumpResults = h5gg.getResults(airjumpCount);
 
         var count = h5gg.getResultsCount();
-        var R = h5gg.getResults(count);
-        if (R.length > 0) {
-            tk = R[0].address;
+        var r = h5gg.getResults(count);
+        if (r.length > 0) {
+            tk = r[0].address;
         } else {
             console.log('没有找到结果');
         }
