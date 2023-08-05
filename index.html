@@ -208,7 +208,10 @@ h5gg.editAll('6', 'F32');
 
         var count = h5gg.getResultsCount();
         var r = h5gg.getResults(count);
+        if (r.length > 0) {
         tk = r[0].address;
+        } else {
+        
 
     }
     tk_zt = '0'//设置变量
