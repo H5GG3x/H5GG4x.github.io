@@ -174,7 +174,7 @@ h5gg.editAll('6', 'F32');
 }
         
     function starck3() {
-     alert('U64')
+    alert('U64')
 
     tkpd = 'U64'
 
@@ -207,24 +207,25 @@ h5gg.editAll('6', 'F32');
 
         var count = h5gg.getResultsCount();
         var R = h5gg.getResults(count);
-        tk = R[0].address;
-
+        if (R.length > 0) {
+            tk = R[0].address;
+        } else {
+            console.log('没有找到结果');
+        }
     }
-    tk_zt = '0'//设置变量
+    tk_zt = '0' //设置变量
 
-    alert('成功')//初始化成功
-
+    alert('成功') //初始化成功
 
     setInterval(function() {
         if (tk_zt == 0) {} else {
             h5gg.setValue(tk, '257', tkpd);
         }      
-    }, 30);//这边30是防卡用的
+    }, 30); //这边30是防卡用的
 
-
-tk_zt = '1'//开启踏空下面的是关闭（设置的变量）
-//tk_zt = '0'
-    }
+    tk_zt = '1' //开启踏空下面的是关闭（设置的变量）
+    //tk_zt = '0'
+}
       
     var inter = null;
  function starck4() {
