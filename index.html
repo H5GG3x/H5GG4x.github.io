@@ -219,6 +219,18 @@ h5gg.editAll('6', 'F32');
     alert('成功') //初始化成功
 
     setInterval(function() {
+        if (tk_zt == 0 || tk === null) {
+            // 如果 tk_zt 为 0 或者 tk 为 null，那么我们不做任何事情
+        } else {
+            h5gg.setValue(tk, '257', tkpd);
+        }      
+    }, 30);
+
+    tk_zt = '1' //开启踏空下面的是关闭（设置的变量）
+    //tk_zt = '0'
+    }
+
+    setInterval(function() {
         if (tk_zt == 0) {} else {
             h5gg.setValue(tk, '257', tkpd);
         }      
