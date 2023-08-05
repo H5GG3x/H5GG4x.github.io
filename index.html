@@ -209,7 +209,7 @@ h5gg.editAll('6', 'F32');
         var tk;
         var count = h5gg.getResultsCount();
         var r = h5gg.getResults(count);
-        if (r.length > 0) {
+        if (z.length > 0 && isValidAddress(z[0].address)) {
         tk = r[0].address;
         } else {
         
