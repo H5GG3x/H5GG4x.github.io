@@ -344,11 +344,12 @@ alert('还原成功');
 
 
 function starck13() {
-h5gg.clearResults();
- 
   setInterval(function()
   {
-    h5gg.searchNumber('1.8', 'F32', '0x000000000', '0x200000000');
+    h5gg.clearResults();
+    h5gg.searchNumber('1.8', 'F32', '0x0', '0x999999999');
+    h5gg.searchNearby('0.6', 'F32', '0x100');
+    h5gg.searchNumber('1.8', 'F32', '0x0', '0x999999999');
         var count = h5gg.getResultsCount();
         var r = h5gg.getResults(count);
         var cnt = 0;
