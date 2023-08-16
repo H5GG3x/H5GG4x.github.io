@@ -235,10 +235,18 @@ tk_zt = '1'//开启踏空下面的是关闭（设置的变量）
 function starck4() {
   h5gg.clearResults();
   var num1 = prompt("请输入一个速度 hyt建议0.1-0.24以内");
+
   if (num1 === null) {
     console.log('用户取消操作');
     return;
   }
+
+  num1 = parseFloat(num1);
+  if (isNaN(num1)) {
+    console.log('输入无效');
+    return;
+  }
+
   h5gg.searchNumber('1036831949', 'I64', '0x0', '0x999999999');
   h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
   h5gg.searchNearby('0.1', 'F32', '0x4');
@@ -253,7 +261,6 @@ function starck4() {
   console.log('定时器已开启, id 是: ' + inter);
   alert('成功');
 }
-
 
  function starck12(){
 console.log('正在尝试停止定时器, id 是: ' + inter); 
@@ -394,7 +401,7 @@ alert("开启成功");
 <div class="scrollbar" style="max-height:200px">
 <button onclick="starck1()"style="color:Red">碰撞箱初始化</button>                          
 <button onclick="starck2()"style="color:Red">碰撞箱</button>               
-<button onclick="starck3()"style="color:Red">99%踏空</button>
+<button onclick="starck3()"style="color:Red">100%踏空</button>
 <button onclick="starck4()"style="color:Red">HYT自定义加速</button>
 <button onclick="starck12()"style="color:Red">HYT恢复加速</button>
 <button onclick="starck5()"style="color:Red">HYT还原加速备用1</button>                   
