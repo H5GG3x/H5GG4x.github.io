@@ -392,6 +392,41 @@ h5gg.setValue(dizhi1,6, "F32");
 },300)
 alert("开启成功");
 }
+
+function starck14() {
+h5gg.clearResults();
+h5gg.searchNumber('65793', 'I32', '0x0', '0x999999999');
+h5gg.searchNearby('0', 'I32', '0x334');
+h5gg.searchNearby('29546', 'I32', '0x35c');
+h5gg.searchNearby('624', 'I32','0x160');
+h5gg.searchNearby('398', 'I32', '0x144');
+h5gg.searchNumber('0', 'I32', '0x0', '0x999999999');
+var count = h5gg.getResultsCount();
+var results = h5gg.getResults(count);
+for(var i = 0; i < count; i++) {
+  h5gg.setValue(results[i].address, 1, "I32");
+  }
+}
+
+function starck15() {
+// 假设 `results` 是你先前获取的地址列表
+
+var results = h5gg.getResults(count);
+
+// 在设定值为1之后，将这些地址存储在一个新的数组中
+
+var addressesToReset = results.map(result => result.address);
+
+// 然后，你可以在任何时候使用这个数组来将这些地址的值设定回0
+
+for(var i = 0; i < addressesToReset.length; i++) {
+
+  h5gg.setValue(addressesToReset[i], 0, "I32");
+
+}
+}
+
+
       
 </script>
 
