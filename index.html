@@ -408,23 +408,23 @@ for(var i = 0; i < count; i++) {
   }
 }
 
-function starck14() {
-// 假设 `results` 是你先前获取的地址列表
+function starck15() {
+    // 获取结果的数量
+    var count = h5gg.getResultsCount();
 
-var results = h5gg.getResults(count);
+    // 获取结果
+    var results = h5gg.getResults(count);
 
-// 在设定值为1之后，将这些地址存储在一个新的数组中
+    // 在设定值为1之后，将这些地址存储在一个新的数组中
+    var addressesToReset = results.map(result => result.address);
 
-var addressesToReset = results.map(result => result.address);
-
-// 然后，你可以在任何时候使用这个数组来将这些地址的值设定回0
-
-for(var i = 0; i < addressesToReset.length; i++) {
-
-  h5gg.setValue(addressesToReset[i], 0, "I32");
-
+    // 然后，你可以在任何时候使用这个数组来将这些地址的值设定回0
+    for(var i = 0; i < addressesToReset.length; i++) {
+        h5gg.setValue(addressesToReset[i], 0, "I32");
+    }
 }
-}
+
+
 
 
       
@@ -440,7 +440,7 @@ for(var i = 0; i < addressesToReset.length; i++) {
 <button onclick="starck4()"style="color:Red">HYT自定义加速</button>
 <button onclick="starck12()"style="color:Red">HYT恢复加速</button>
 <button onclick="starck14()"style="color:Red">伪创造</button>
-<button onclick="starck14()"style="color:Red">还原伪创造</button>
+<button onclick="starck15()"style="color:Red">还原伪创造</button>
 <button onclick="starck5()"style="color:Red">HYT还原加速备用1</button>                   
 <button onclick="starck8()"style="color:Red">EC自定义加速</button>
 <button onclick="starck11()"style="color:Red">EC加速还原</button>
