@@ -204,10 +204,10 @@ h5gg.editAll('6', 'F32');
         alert('否')
 
        h5gg.clearResults();
-        h5gg.searchNumber('257', 'I16', '0x0', '0x999999999');
-        h5gg.searchNearby('23677', 'I16', '0x92');
-        h5gg.searchNearby('15932', 'I16', '0x672');
-        h5gg.searchNumber('257', 'I16', '0x0', '0x999999999');
+        h5gg.searchNumber('257', 'U16', '0x0', '0x999999999');
+        h5gg.searchNearby('23677', 'U16', '0x92');
+        h5gg.searchNearby('15932', 'U16', '0x672');
+        h5gg.searchNumber('257', 'U16', '0x0', '0x999999999');
         airjumpCount = h5gg.getResultsCount();
         airjumpResults = h5gg.getResults(airjumpCount);
 
@@ -316,11 +316,11 @@ alert('还原成功');
 var intervalId;
 function starck6() {
   h5gg.clearResults();
-h5gg.searchNumber('98312', 'I32', '0x0', '0x999999999');
-h5gg.searchNearby('327687', 'I32', '0x20');
-h5gg.searchNumber('98312', 'I32', '0x0', '0x999999999');
+h5gg.searchNumber('98312', 'U32', '0x0', '0x999999999');
+h5gg.searchNearby('327687', 'U32', '0x20');
+h5gg.searchNumber('98312', 'U32', '0x0', '0x999999999');
 intervalId = setInterval(function() {
-h5gg.editAll('8486920', 'I32');
+h5gg.editAll('8486920', 'U32');
    }, 30);
 }
 
@@ -395,15 +395,15 @@ alert("开启成功");
 
 function starck14() {
 h5gg.clearResults();
-h5gg.searchNumber('65793', 'I32', '0x0', '0x999999999');
+h5gg.searchNumber('65793', 'U32', '0x0', '0x999999999');
 h5gg.searchNearby('0', 'I32', '0x334');
-h5gg.searchNearby('-409686551', 'I32', '0x354');
-h5gg.searchNearby('398', 'I32','0x144');
-h5gg.searchNumber('0', 'I32', '0x0', '0x999999999');
+h5gg.searchNearby('-409686551', 'U32', '0x354');
+h5gg.searchNearby('398', 'U32','0x144');
+h5gg.searchNumber('0', 'U32', '0x0', '0x999999999');
 var count = h5gg.getResultsCount();
 var results = h5gg.getResults(count);
 for(var i = 0; i < count; i++) {
-  h5gg.setValue(results[i].address, 1, "I32");
+  h5gg.setValue(results[i].address, 1, "U32");
   }
 }
 
@@ -419,7 +419,7 @@ function starck15() {
 
     // 然后，你可以在任何时候使用这个数组来将这些地址的值设定回0
     for(var i = 0; i < addressesToReset.length; i++) {
-        h5gg.setValue(addressesToReset[i], 0, "I32");
+        h5gg.setValue(addressesToReset[i], 0, "U32");
     }
 }
 
