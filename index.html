@@ -185,8 +185,8 @@ h5gg.editAll('6', 'F32');
     tkpd = 'U64'
    
    h5gg.searchNumber('257', 'U64', '0x0', '0x999999999');
-    h5gg.searchNearby('4474776594666015949', 'U64', '0x250');
-    h5gg.searchNearby('4575657222456999936', 'U64', '0x30');
+    h5gg.searchNearby('4474776594666015949', 'U64', '0x208');
+    h5gg.searchNearby('4575657222456999936', 'U64', '0x48');
     h5gg.searchNumber('257', 'U64', '0x0', '0x999999999');
     airjumpCount = h5gg.getResultsCount();
     airjumpResults = h5gg.getResults(airjumpCount);
@@ -200,13 +200,13 @@ h5gg.editAll('6', 'F32');
         tk = r[0].address;
     } else {
 
-        tkpd = 'I16'
+        tkpd = 'U16'
         alert('否')
 
        h5gg.clearResults();
         h5gg.searchNumber('257', 'U16', '0x0', '0x999999999');
         h5gg.searchNearby('23677', 'U16', '0x92');
-        h5gg.searchNearby('15932', 'U16', '0x672');
+        h5gg.searchNearby('16335', 'U16', '0x94');
         h5gg.searchNumber('257', 'U16', '0x0', '0x999999999');
         airjumpCount = h5gg.getResultsCount();
         airjumpResults = h5gg.getResults(airjumpCount);
