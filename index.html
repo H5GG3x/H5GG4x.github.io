@@ -263,19 +263,23 @@ function starck4() {
 }
 
  function starck12(){
-console.log('正在尝试停止定时器, id 是: ' + inter); 
-clearInterval(inter); // 停止之前的 interval
-var num2 = prompt("请输入你要还原的速度");
-h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
-h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
-h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
-var count = h5gg.getResultsCount();
-var results = h5gg.getResults(count);
-for(var i = 0; i < count; i++) {
-  h5gg.setValue(results[i].address, 0.1, "F32");
+function stopAndRestore() {
+  // 停止定时器
+  if (inter) {
+    clearInterval(inter);
+    console.log('定时器已停止, id 是: ' + inter);
+    inter = null;
+  }
+  
+  // 还原修改过的值
+  var count = h5gg.getResultsCount();
+  var results = h5gg.getResults(count);
+  for (var i = 0; i < count; i++) {
+    h5gg.setValue(results[i].address, 0.1, "F32");
+  }
+  console.log('所有值都已恢复为0.1');
+  alert('操作已还原');
 }
-console.log('已经尝试停止定时器, id 是: ' + inter);
-alert('还原成功');
  }
  
 
