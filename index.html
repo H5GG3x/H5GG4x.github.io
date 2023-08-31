@@ -261,44 +261,25 @@ function starck4() {
   console.log('定时器已开启, id 是: ' + inter);
   alert('成功');
 }
+      
+function starck12(){
+console.log('正在尝试停止定时器, id 是: ' + inter); 
+clearInterval(inter); // 停止之前的 interval
+var num2 = prompt("请输入你要还原的速度");
+h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
+h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
+h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
+var count = h5gg.getResultsCount();
+var results = h5gg.getResults(count);
 
- function starck12() {
-  let inter = setInterval(() => {}, 1000); // 假设你已经定义了一个定时器
-  console.log('正在尝试停止定时器, id 是: ' + inter); 
-  clearInterval(inter); // 停止之前的 interval
+results.forEach(result => {
+  var address = result.address;
+  h5gg.setValue(address, 0.1, "F32");
+});
 
-  let num2 = prompt("请输入你要还原的速度");
-  if (isNaN(num2)) {
-    alert('请输入有效的数值');
-    return;
-  }
-
-  try {
-    h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
-    h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
-    h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
-  } catch (error) {
-    console.error('搜索出错:', error);
-    return;
-  }
-
-  let count = h5gg.getResultsCount();
-  let results = h5gg.getResults(count);
-
-  results.forEach(result => {
-    let address = result.address;
-    try {
-      h5gg.setValue(address, 0.1, "F32");
-    } catch (error) {
-      console.error('设置值出错:', error);
-    }
-  });
-
-  console.log('已经尝试停止定时器, id 是: ' + inter);
-  alert('还原成功');
+console.log('已经尝试停止定时器, id 是: ' + inter);
+alert('还原成功');
 }
-
-starck12();
 
 var intervalId;
 function starck8(){
