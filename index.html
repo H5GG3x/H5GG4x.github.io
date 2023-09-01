@@ -262,30 +262,29 @@ function starck4() {
   alert('成功');
 }
       
-function starck12(){
-console.log('正在尝试停止定时器, id 是: ' + inter); 
-clearInterval(inter); // 停止之前的 interval
-var num2 = prompt("请输入你要还原的速度");
+function starck12() {
+    // 停止之前的 interval
+    clearInterval(inter);
 
-// 检查用户是否取消了输入、未输入任何内容或者输入的不是数字
-if (num2 === null || num2 === "" || isNaN(num2)) {
-    console.log('用户取消了输入、未输入任何内容或者输入的不是数字');
-    return;  // 结束函数执行
-}
+    var num2 = prompt("请输入你要还原的速度");
 
-h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
-h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
-h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
-var count = h5gg.getResultsCount();
-var results = h5gg.getResults(count);
+    // 检查用户是否取消了输入、未输入任何内容或者输入的不是数字
+    if (num2 === null || num2 === "" || isNaN(num2)) {
+        return;  // 结束函数执行
+    }
 
-results.forEach(result => {
-  var address = result.address;
-  h5gg.setValue(address, 0.1, "F32");
-});
+    h5gg.searchNumber(num2, 'F32', '0x0', '0x999999999');
+    h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
+    var count = h5gg.getResultsCount();
+    var results = h5gg.getResults(count);
 
-console.log('已经尝试停止定时器, id 是: ' + inter);
-alert('还原成功');
+    // 使用传统的 for 循环代替 forEach
+    for (var i = 0; i < results.length; i++) {
+        var address = results[i].address;
+        h5gg.setValue(address, 0.1, "F32");
+    }
+
+    alert('还原成功');
 }
 
 
