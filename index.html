@@ -253,9 +253,13 @@ function starck4() {
   h5gg.searchNumber("0.1", "F32", "0x0", "0x999999999");
   var count = h5gg.getResultsCount();
   var results = h5gg.getResults(count);
+
+  // 保存结果的地址，避免在循环中多次获取
+  var addresses = results.map(result => result.address);
+
   inter = setInterval(function() {
     for (var i = 0; i < count; i++) {
-      h5gg.setValue(results[i].address, num1, "F32");
+      h5gg.setValue(addresses[i], num1, "F32");
     }
   }, 10);
   console.log('定时器已开启, id 是: ' + inter);
