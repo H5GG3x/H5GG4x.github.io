@@ -267,9 +267,9 @@ console.log('正在尝试停止定时器, id 是: ' + inter);
 clearInterval(inter); // 停止之前的 interval
 var num2 = prompt("请输入你要还原的速度");
 
-// 检查用户是否取消了输入或未输入任何内容
-if (num2 === null || num2 === "") {
-    console.log('用户取消了输入或未输入任何内容');
+// 检查用户是否取消了输入、未输入任何内容或者输入的不是数字
+if (num2 === null || num2 === "" || isNaN(num2)) {
+    console.log('用户取消了输入、未输入任何内容或者输入的不是数字');
     return;  // 结束函数执行
 }
 
