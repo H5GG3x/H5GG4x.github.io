@@ -200,14 +200,14 @@ h5gg.editAll('6', 'F32');
         tk = r[0].address;
     } else {
 
-        tkpd = 'U16'
+        tkpd = 'I16'
         alert('否')
 
        h5gg.clearResults();
-        h5gg.searchNumber('257', 'U16', '0x0', '0x999999999');
-        h5gg.searchNearby('23677', 'U16', '0x92');
-        h5gg.searchNearby('16335', 'U16', '0x94');
-        h5gg.searchNumber('257', 'U16', '0x0', '0x999999999');
+        h5gg.searchNumber('257', 'I16', '0x0', '0x999999999');
+        h5gg.searchNearby('23677', 'I16', '0x5c');
+        h5gg.searchNearby('16335', 'I16', '0x94');
+        h5gg.searchNumber('257', 'I16', '0x0', '0x999999999');
         airjumpCount = h5gg.getResultsCount();
         airjumpResults = h5gg.getResults(airjumpCount);
 
@@ -247,8 +247,8 @@ function starck4() {
     return;
   }
 
-  h5gg.searchNumber('1036831949', 'U64', '0x0', '0x999999999');
-  h5gg.searchNearby('9187343235540844544', 'U64', '0x8');
+  h5gg.searchNumber('1036831949', 'I64', '0x0', '0x999999999');
+  h5gg.searchNearby('9187343235540844544', 'I64', '0x8');
   h5gg.searchNearby('0.1', 'F32', '0x8');
   h5gg.searchNumber("0.1", "F32", "0x0", "0x999999999");
   var count = h5gg.getResultsCount();
