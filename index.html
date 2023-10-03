@@ -407,14 +407,14 @@ alert("开启成功");
 function starck14() {
 h5gg.clearResults();
 h5gg.searchNumber('65793', 'I32', '0x0', '0x999999999');
-h5gg.searchNearby('0', 'I32', '0x334');
-h5gg.searchNearby('16843009', 'I32', '0xf40');
+h5gg.searchNearby('0', 'I32', '0x33c');
+h5gg.searchNearby('27503', 'I32', '0x364');
 h5gg.searchNearby('624', 'I32','0x160');
 h5gg.searchNumber('0', 'I32', '0x0', '0x999999999');
 var count = h5gg.getResultsCount();
 var results = h5gg.getResults(count);
 for(var i = 0; i < count; i++) {
-  h5gg.setValue(results[i].address, 1, "U32");
+  h5gg.setValue(results[i].address, 1, "I32");
   }
 }
 
@@ -430,7 +430,7 @@ function starck15() {
 
     // 然后，你可以在任何时候使用这个数组来将这些地址的值设定回0
     for(var i = 0; i < addressesToReset.length; i++) {
-        h5gg.setValue(addressesToReset[i], 0, "U32");
+        h5gg.setValue(addressesToReset[i], 0, "I32");
     }
 }
 
